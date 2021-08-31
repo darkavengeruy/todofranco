@@ -131,7 +131,7 @@ namespace todofranco.Functions.Functions
         }
 
         [FunctionName(nameof(GetTodoById))]
-        public static async Task<IActionResult> GetTodoById(
+        public static IActionResult GetTodoById(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo/{id}")] HttpRequest req,
             [Table("todo", "TODO","{id}", Connection = "AzureWebJobsStorage")] TodoEntity todoEntity,
             string id,
